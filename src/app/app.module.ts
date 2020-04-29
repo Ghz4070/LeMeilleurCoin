@@ -9,6 +9,12 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+// the second parameter 'fr-FR' is optional
+registerLocaleData(localeFr, 'fr-FR');
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

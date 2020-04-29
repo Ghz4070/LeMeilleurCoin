@@ -13,4 +13,9 @@
       <ion-title size="large">Annonces</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <app-offer *ngFor="let offer of offers" [offerToDisplay]="offer" (click)="handleOfferClick(offer)"></app-offer>
+
+  
 </ion-content>
+

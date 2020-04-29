@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Offer } from 'src/app/models/offer';
+import { Router } from '@angular/router';
+import { OfferService } from 'src/app/services/offer.service';
 
 @Component({
   selector: 'app-offers-list',
@@ -7,8 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OffersListComponent implements OnInit {
 
-  constructor() { }
+  public offers : Offer[];
 
-  ngOnInit() { console.log("list init");}
+  constructor(private router: Router, private offerService: OfferService) {
+    this.offers = this.offerService.getOffers();
+ }
 
+  ngOnInit() {
+  }
+
+  handleOfferClick(offer: Offer) {
+    this.router.navigate(['pages/offerDetails', offer.getId()]);
+  }
 }

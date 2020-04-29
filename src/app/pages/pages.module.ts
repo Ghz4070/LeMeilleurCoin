@@ -6,6 +6,7 @@ import { OfferDetailsComponent } from './offer-details/offer-details.component';
 import { AddOfferComponent } from './add-offer/add-offer.component';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { OfferComponent } from './offer/offer.component';
 
 const routes: Routes = [
   {
@@ -13,13 +14,14 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent},
       { path: 'listOffers', component: OffersListComponent},
-      { path: 'addOffer', component: AddOfferComponent}
+      { path: 'addOffer', component: AddOfferComponent},
+      { path: 'offerDetails/:id', component: OfferDetailsComponent}
     ]
   }
 ];
 
 @NgModule({
-  declarations: [HomeComponent, OffersListComponent, OfferDetailsComponent, AddOfferComponent],
+  declarations: [HomeComponent, OffersListComponent, OfferDetailsComponent, AddOfferComponent, OfferComponent],
   imports: [
     IonicModule,
     CommonModule,
